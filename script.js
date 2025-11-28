@@ -3,6 +3,8 @@ let para = document.querySelector("p")
 let text = para.innerText;
 let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
+let intervalID = null;
+
 para.addEventListener("mouseenter", () => {
     let i = 0;
 
@@ -16,7 +18,7 @@ para.addEventListener("mouseenter", () => {
         para.innerText = ans;
         i += 0.25;
     }
-
-
-    setInterval(() => { matrixEffect() }, 30);
+    
+    clearInterval(intervalID);
+    intervalID = setInterval(() => { matrixEffect() }, 30);
 })
